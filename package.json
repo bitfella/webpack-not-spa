@@ -1,0 +1,42 @@
+{
+  "name": "webpack-not-spa",
+  "version": "1.0.0",
+  "description": "Webpack 3 setup useful to build a simple website and not a super sophisticated spa",
+  "main": "index.js",
+  "scripts": {
+    "start": "webpack --progress",
+    "build": "webpack -p --progress",
+    "watch": "webpack --watch --progress"
+  },
+  "author": "bitfella",
+  "license": "UNLICENSED",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/bitfella/webpack-not-spa.git"
+  },
+  "devDependencies": {
+    "babel-core": "^6.26.0",
+    "babel-loader": "^7.1.2",
+    "babel-preset-es2015": "^6.24.1",
+    "breakpoint-sass": "^2.7.1",
+    "css-loader": "^0.28.5",
+    "eslint": "^4.6.1",
+    "eslint-config-airbnb-base": "^12.0.0",
+    "eslint-import-resolver-webpack": "^0.8.3",
+    "eslint-loader": "^1.9.0",
+    "eslint-plugin-import": "^2.7.0",
+    "extract-text-webpack-plugin": "^3.0.0",
+    "file-loader": "^0.11.2",
+    "node-sass": "^4.5.3",
+    "postcss-cssnext": "^3.0.2",
+    "postcss-import": "^10.0.0",
+    "postcss-loader": "^2.0.6",
+    "sass-loader": "^6.0.6",
+    "sass-resources-loader": "^1.3.1",
+    "style-loader": "^0.18.2",
+    "url-loader": "^0.5.9",
+    "webpack": "^3.5.5",
+    "webpack-livereload-plugin": "^0.11.0",
+    "webpack-notifier": "^1.5.0"
+  }
+}
