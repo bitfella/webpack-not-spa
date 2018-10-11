@@ -1,5 +1,5 @@
 # webpack-not-spa
-Webpack 3 setup useful to build a simple website and not a super sophisticated spa (Wordpress theme anyone??!1?). Comes with Babel ES6 transpilation + polyfill, watch + LiveReload, eslint and more.
+Webpack 4 setup useful to build a simple website and not a super sophisticated spa (Wordpress theme anyone??!1?). Comes with Babel 7 ES6 transpilation + polyfill, watch + LiveReload, eslint, stylelint and more.
 
 ## Prerequisites
 Install all needed dev dependencies through that classic line `npm install`; I guess even your mom know what this command stands for.
@@ -7,7 +7,7 @@ Install all needed dev dependencies through that classic line `npm install`; I g
 ## Project structure
 You should put your source files in the following folders and everything should work fine:
 
- - `./src/app.js` this is the entry point of your bundle, import any module js/css/whatever in this file. Folder structure is not mandatory, anyway the following folders are mapped in `webpack.config.js` to avoid relative path hell:
+ - `./src/index.js` this is the entry point of your bundle, import any module js/css/whatever in this file. Folder structure is not mandatory, anyway the following folders are mapped in `webpack.base.js` to avoid relative path hell:
 	 - `common`--> `./src/common/`;
 	 - `components`--> `./src/components/`;
 	 - `modules`--> `./src/modules/`;
@@ -26,7 +26,27 @@ After the build you should get the following stuff in your `./dist` folder:
  - `./images/` all bundled (> 25KB size) images here;
  - `./fonts/` all bundled (> 25KB size) fonts here.
 
-Sorry mate, no code splitting, this is just a basic setup :/
+## Code splitting
+This setup supports Webpack's code splitting through dynamic imports syntax. Just use the following syntax and everything should work fine:
+
+```javascript
+import(/* webpackChunkName: "testme" */ 'modules/TestMe/TestMe').then(function(myChunk) {
+    const TestMeClass = myChunk.default;
+    const TestMe = new TestMeClass();
+
+    console.log(TestMe.init());
+});
+```
+Please refer to Webpack's official documentation to learn more. Event though this bundler supports IE11 through Babel Polyfill, please be aware that using code splitting could generate errors in legacy browers. [See this thread](https://github.com/babel/babel/issues/7402). If you're not using Promises anywhere in your code, a quick fix is to put the following code in your app entrypoint: 
+
+```javascript
+var p = Promise.resolve(0);
+
+Promise.all([p]).then(function() {
+  console.log("ALL OK");
+});
+```
+This code snippet should generate the correct polyfill in your bundle file.
 
 ## Commands
 Open your terminal and fire up one of the following npm scripts:
