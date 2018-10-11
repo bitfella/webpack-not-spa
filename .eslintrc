@@ -1,17 +1,16 @@
 {
   "extends": "airbnb-base",
   "settings": {
-    "import/resolver": {
-      "webpack": {}
-    }
+    "import/resolver": { "node": { "paths": ["src"] } }
   },
   "env": {
     "browser": true,
     "node": true
   },
-  "rules": {
-    "class-methods-use-this": 0,
-    "no-unused-vars": 0,
-    "no-param-reassign": 0
+  "parser": "babel-eslint",
+  "parserOptions": {
+    "allowImportExportEverywhere": true,
+    "ecmaVersion": 2017,
+    "sourceType": "module"
   }
 }
