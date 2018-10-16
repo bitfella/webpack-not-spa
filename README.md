@@ -53,7 +53,10 @@ Open your terminal and fire up one of the following npm scripts:
 
  - `npm start`: builds the project for development purposes;
  - `npm run watch`: builds the project for development purposes, watches the whole stuff for changes and reloads the page when needed (you should kill the process with ctrl+c when you need to);
- - `npm run build`: builds the project for productions (minifies and stuff).
+ - `npm run build`: builds the project for productions (minifies and stuff);
+ - `npm run test`: run tests with Jest [see Jest docs](https://jestjs.io/);
+ - `npm run test:watch`: run and watch tests with Jest;
+ - `npm run test:coverage`: run tests with Jest and generate code coverage report.
 
 ## Side notes
 In order to simplify your workflow, this Webpack setup uses `sass-resources-loader` to avoid the need to import sass functions, mixins, placeholders and variables everytime you need them. Simply drop them in the following partials and they will be available anywhere in the project:
