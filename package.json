@@ -6,7 +6,10 @@
   "scripts": {
     "start": "webpack --progress --mode development --config webpack.base.js",
     "watch": "webpack --progress --mode development --watch --config webpack.development.js",
-    "build": "webpack --progress --mode production --config webpack.production.js"
+    "build": "webpack --progress --mode production --config webpack.production.js",
+    "test": "jest",
+    "test:watch": "jest --watch",
+    "test:coverage": "jest --coverage"
   },
   "keywords": [
     "webpack",
@@ -27,7 +30,9 @@
     "@babel/core": "^7.1.0",
     "@babel/plugin-syntax-dynamic-import": "^7.0.0",
     "@babel/preset-env": "^7.1.0",
+    "babel-core": "^7.0.0-0",
     "babel-eslint": "^10.0.1",
+    "babel-jest": "^23.6.0",
     "babel-loader": "^8.0.4",
     "clean-webpack-plugin": "^0.1.19",
     "css-loader": "^1.0.0",
@@ -35,7 +40,9 @@
     "eslint-config-airbnb-base": "^13.1.0",
     "eslint-loader": "^2.1.1",
     "eslint-plugin-import": "^2.14.0",
+    "eslint-plugin-jest": "^21.22.1",
     "file-loader": "^2.0.0",
+    "jest": "^23.6.0",
     "mini-css-extract-plugin": "^0.4.3",
     "node-sass": "^4.9.3",
     "optimize-css-assets-webpack-plugin": "^5.0.1",
@@ -44,6 +51,7 @@
     "postcss-import": "^12.0.0",
     "postcss-loader": "^3.0.0",
     "postcss-preset-env": "^6.1.0",
+    "regenerator-runtime": "^0.12.1",
     "sass-loader": "^7.1.0",
     "sass-resources-loader": "^1.3.3",
     "style-loader": "^0.23.1",
