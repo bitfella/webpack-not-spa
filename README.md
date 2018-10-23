@@ -2,7 +2,7 @@
 Webpack 4 setup useful to build a simple website and not a super sophisticated spa (Wordpress theme anyone??!1?). Comes with Babel 7 ES6 transpilation + polyfill, watch + LiveReload, eslint, stylelint and more.
 
 ## Prerequisites
-Install all needed dev dependencies through that classic line `npm install`; I guess even your mom know what this command stands for.
+Fire up your terminal and Install all needed dev dependencies through `npm install`.
 
 ## Project structure
 You should put your source files in the following folders and everything should work fine:
@@ -15,7 +15,9 @@ You should put your source files in the following folders and everything should 
 
 This means you can just do the following:
 
-```import MainNav from 'modules/MainNav';```
+```javascript
+import MainNav from 'modules/MainNav';
+```
 
 no matter which folder your parent js is located in.
 
