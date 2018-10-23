@@ -2,7 +2,7 @@
 Webpack 4 setup useful to build a simple website and not a super sophisticated spa (Wordpress theme anyone??!1?). Comes with Babel 7 ES6 transpilation + polyfill, watch + LiveReload, eslint, stylelint and more.
 
 ## Prerequisites
-Fire up your terminal and Install all needed dev dependencies through `npm install`.
+Fire up your terminal and install all needed dependencies through `npm install`.
 
 ## Project structure
 You should put your source files in the following folders and everything should work fine:
